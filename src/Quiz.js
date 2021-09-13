@@ -6,13 +6,13 @@ let quizData = require("./quiz_data.json")
 class Quiz extends React.Component{
     constructor(props){
         super(props);
-        this.state = {quiz_position: 1}
+        this.state = { quiz_position: 1 }
     }
     render() {
         return (
             <div>
                 <div className='QuizQuestion'>
-                    <QuizQuestion quiz_question={this.state.quiz_position.quizData.quiz_question - 1}/>
+                    <QuizQuestion quiz_question={quizData.quiz_question[this.state.quiz_position - 1]} />
                 </div>
             </div>
         )
