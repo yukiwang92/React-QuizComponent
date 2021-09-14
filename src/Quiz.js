@@ -1,6 +1,8 @@
 import QuizQuestion from './QuizQuestion.js';
 import { render } from "enzyme";
-import React, { Component } from "react"
+import React, { Component } from "react";
+import QuizEnd from './QuizEnd.js';
+
 let quizData = require("./quiz_data.json")
 
 class Quiz extends React.Component{
@@ -9,11 +11,20 @@ class Quiz extends React.Component{
         this.state = { quiz_position: 1 }
     }
     render() {
-        return (
-            <div>
-                 <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} />
-            </div>
-        )
+        const isQuizEnd = this.state.quiz_position - 1 === quizData.quiz_question.length ? true : false;
+        if (this.state.isQuizEnd){
+            return (
+                <div>
+                    <QuizEnd />
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} />
+                </div>
+            ); 
+        }
     }
 }
 
