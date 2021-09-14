@@ -12,7 +12,7 @@ class Quiz extends React.Component{
     }
     render() {
         const isQuizEnd = this.state.quiz_position - 1 === quizData.quiz_question.length ? true : false;
-        if (this.state.isQuizEnd){
+        if (isQuizEnd){
             return (
                 <div>
                     <QuizEnd />
