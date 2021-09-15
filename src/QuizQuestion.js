@@ -10,11 +10,11 @@ class QuizQuestion extends React.Component{
 
     handleClick(buttonText){
         if (buttonText === this.props.quiz_question.answer){
+            this.setState({incorrectAnswer: false})
             this.props.showNextQuestionHandler()
-        }
-        this.setState((state) => ({
-            incorrectAnswer: !state.incorrectAnswer
-        })); 
+        } else {
+            this.setState({incorrectAnswer: ture})
+        } 
     }
 
     render(){
