@@ -26,13 +26,13 @@ class Quiz extends React.Component{
         if (isQuizEnd){
             return (
                 <div>
-                    <QuizEnd />
+                    <QuizEnd resetClickHandler={this.handleResetClick.bind(this)} />
                 </div>
             );
         } else {
             return (
                 <div>
-                    <QuizQuestion resetClickHandler="this.handleResetClick.bind(this)" quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} showNextQuestionHandler={this.showNextQuestion.bind(this)} />
+                    <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} showNextQuestionHandler={this.showNextQuestion.bind(this)} />
                 </div>
             );
         }
