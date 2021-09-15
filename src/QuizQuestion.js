@@ -31,7 +31,7 @@ class QuizQuestion extends React.Component{
                     })}
                     </ul>
                 </section>
-                this.state.incorrectAnswer ? {<p class="errow">Sorry, that's not right</p>} : null
+                {this.state.incorrectAnswer ? <p class="error">Sorry, that's not right</p> : null}
             </main>
         );
     }
