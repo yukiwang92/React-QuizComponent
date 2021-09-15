@@ -13,7 +13,7 @@ class QuizQuestion extends React.Component{
             this.setState({incorrectAnswer: false})
             this.props.showNextQuestionHandler()
         } else {
-            this.setState({incorrectAnswer: ture})
+            this.setState({incorrectAnswer: true})
         } 
     }
 
